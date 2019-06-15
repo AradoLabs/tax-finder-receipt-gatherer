@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxFinderReceiptGatherer", "TaxFinderReceiptGathererApi\TaxFinderReceiptGatherer.csproj", "{2510F149-9F59-4F5B-B54F-8E67F569F72D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2510F149-9F59-4F5B-B54F-8E67F569F72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2510F149-9F59-4F5B-B54F-8E67F569F72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2510F149-9F59-4F5B-B54F-8E67F569F72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2510F149-9F59-4F5B-B54F-8E67F569F72D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0505FCD-7C6D-46FB-A8A6-015F63A96071}
+	EndGlobalSection
+EndGlobal
