@@ -40,7 +40,7 @@ namespace TaxFinderReceiptGathererApi
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc();
