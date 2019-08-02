@@ -1,10 +1,41 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>file input image and alv</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <script src="code.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    HTML page!
+    <div id="header">
+        <h1>alvFinder</h1>
+    </div>
+
+    <div class="form" id="form">
+        <form method="POST" action="http://localhost:60304/api/receipt">
+
+            <input class="input" type="file" id="AlvImg" name="AlvImg" onchange="previewFile()">
+            <br>
+            <img src="" class="image" height="200" alt="Image preview...">
+
+            <inpu class="input" name="Alv24" id="Alv24" type="number" step="0.1" placeholder=" alv 24%">
+
+            <input class="input" name="Alv14" id="Alv14" type="number" step="0.1" placeholder=" alv 14%">
+
+            <input class="input" name="Alv10" id="Alv10" type="number" step="0.1" placeholder=" alv 10%">
+
+            <input class="input" name="Alv0" id="Alv0" type="number" step="0.1" placeholder=" alv 0%">
+            <input class="btn" type="submit" value="Submit" formmethod="POST" formaction="http://localhost:60304/api/receipt">
+
+        </form>
+    </div>
+    <div id="footer">
+        <p>Arado 2019 TV</p>
+    </div>
+
+    <script>
+
+    </script>
 </body>
 </html>
