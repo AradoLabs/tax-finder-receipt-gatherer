@@ -9,12 +9,11 @@ namespace TaxFinderReceiptGatherer.Model
 {
     public class Receipt
     {
-            public Double Alv24 { get; set; }
-            public Double Alv12 { get; set; }
-            public Double Alv10 { get; set; }
-            public Double Alv0 { get; set; }
+            public decimal Alv24 { get; set; }
+            public decimal Alv12 { get; set; }
+            public decimal Alv10 { get; set; }
+            public decimal Alv0 { get; set; }
             public IFormFile AlvImg { get; set; }
 
-       
        }
 }
