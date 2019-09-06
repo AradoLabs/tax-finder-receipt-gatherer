@@ -33,15 +33,15 @@ namespace TaxFinderReceiptGatherer.Controllers
             {
                 // Käsittele kuitti!
                 //Tallennetaan kuva Azureen
-                await UploadFileToStorage(receipt.AlvImg, receipt.AlvImg.FileName, new AzureStorageConfig());
+                await UploadFileToStorage(receipt.AlvImg, receipt.AlvImg.FileName, receipt.Alv0, receipt.Alv10, receipt.Alv14, receipt.Alv24, new AzureStorageConfig());
             }
 
             // Tähän badRequest tai Try/Catch    
-            // tähän palautetaan takaisin sivustolle
+            // Palautetaan takaisin tyhjälle sivustolle
             return Redirect("/");
-        }
+        }      
 
-        public static async Task<bool> UploadFileToStorage(IFormFile formFile, string fileName, AzureStorageConfig _storageConfig)
+        public static async Task<bool> UploadFileToStorage(IFormFile formFile, string fileName, decimal alv0, decimal alv10, decimal alv14, decimal alv24,  AzureStorageConfig _storageConfig)
         {
 
             // Create storagecredentials object by reading the values from the configuration (appsettings.json)
@@ -60,13 +60,23 @@ namespace TaxFinderReceiptGatherer.Controllers
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(fileName);
 
 
+
             using (var stream = new MemoryStream())
             {
                 formFile.CopyTo(stream);
-                await blockBlob.UploadFromStreamAsync(stream);
-            }
-            // Upload the file
+                await blockBlob.UploadFromStreamAsync(stream);                    
+               }
+
             
+            //Lisätään metatiedot azureen kuvaan
+            blockBlob.Metadata.Add("alv0", alv0.ToString());
+            blockBlob.Metadata.Add("alv10", alv10.ToString());
+            blockBlob.Metadata.Add("alv14", alv14.ToString());
+            blockBlob.Metadata.Add("alv24", alv24.ToString());
+            await blockBlob.SetMetadataAsync();
+            // Upload the file
+
+
 
             return await Task.FromResult(true);
         }
